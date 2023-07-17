@@ -1,0 +1,66 @@
+:root {
+  --font-face: AvernirNextLTPro;
+  --BandSite-Black: #323232;
+  --Silver: #afafaf;
+  --White: #fff;
+  --BandSite-DarkBlack: #000;
+  --Mercury: #e1e1e1;
+  --Alabaster: #fafafa;
+  --Text-white: #fff;
+  --text-body: #000;
+}
+
+.hero {
+  min-height: 20rem;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/Images/hero-bio.jpg);
+  background-size: cover;
+}
+.hero__heading {
+  color: var(--White);
+}
+
+.section__heading, .section__image, .section__description {
+  padding-bottom: 16px;
+}
+.section__quote {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0;
+}
+.section__quote__inner {
+  margin: 0;
+}
+.section__subheading {
+  font-weight: 600;
+}
+.section__gallery {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (1280px > width >= 768px) {
+  .section__gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .section__gallery__image {
+    width: calc(50% - 1rem);
+  }
+}
+@media (width >= 1280px) {
+  .section__gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .section__gallery__image {
+    width: calc(33% - 2rem);
+  }
+}/*# sourceMappingURL=bio.css.map */

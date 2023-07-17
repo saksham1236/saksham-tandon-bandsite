@@ -1,0 +1,28 @@
+:root {
+  //font-face
+  --font-face: AvernirNextLTPro;
+
+  //theme colors
+  --BandSite-Black: #323232;
+  --Silver: #afafaf;
+  --White: #fff;
+  --BandSite-DarkBlack: #000;
+  --Mercury: #e1e1e1;
+  --Alabaster: #fafafa;
+
+  //Ui Colors
+  --Text-white: #fff;
+  --text-body: #000;
+}
+
+@mixin desktop {
+  @media(width >= 1280px) {
+    @content;
+  }
+}
+
+@mixin tablet{
+    @media(1280px > width >= 768px){
+        @content
+    }
+}

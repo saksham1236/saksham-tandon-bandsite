@@ -1,0 +1,17 @@
+@font-face {
+    font-family: var(--font-face);
+    src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype'),
+    url(../../assets/Font/Alternative-files/AvenirNextLTPro.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: var(--font-face);
+    src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: var(--font-face);
+    src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype');
+    font-weight: 700;
+}

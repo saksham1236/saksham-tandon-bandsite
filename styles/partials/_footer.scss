@@ -1,0 +1,14 @@
+footer, .footer{
+    background-color: var(--BandSite-Black);
+    display: flex;
+    &__socials{
+        display: inherit;
+        &__links{
+            display: flex;
+            list-style: none;
+           & img{
+            height: 2.5rem;
+           }
+        }
+    }
+}

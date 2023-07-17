@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img,
+svg,
+picture {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: var(--font-face), sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3{
+  margin: 0;
+  font-family: var(--font-face), sans-serif;
+  line-height: 150%;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+p{
+  font-family: var(--font-face), sans-serif;
+  line-height: 120%;
+}
+
+section:nth-of-type(odd){
+  background-color: var(--Alabaster);
+}
