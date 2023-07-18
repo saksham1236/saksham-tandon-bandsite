@@ -1,19 +1,40 @@
+@use './abstracts' as*;
+
 nav,
 .nav {
   display: flex;
   background-color: var(--BandSite-Black);
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 1rem;
+
+  @include tablet{
+    justify-content:flex-start;
+    flex-direction: row;
+    column-gap: 4rem;
+    padding-left: 2rem;
+    padding-top: 0;
+  }
 
   &__logo {
-    padding: 1rem;
+    padding: 0rem;
     max-height: 20px;
     max-width: 120px;
+    @include tablet{
+      padding: 0;
+    }
+    & img{
+      height: 100%;
+    }
   }
   &__links {
     display: flex;
     flex: 1 1 auto;
     width: 100%;
+    @include tablet{
+      flex: 0 0 fit-content;
+    }
     &__list {
       display: flex;
       list-style: none;
@@ -22,6 +43,12 @@ nav,
       justify-content: center;
       margin: 0;
       padding: 0;
+      @include tablet{
+        column-gap: 3rem;
+      }
+      @include desktop{
+        column-gap: 3rem;
+      }
       &__item {
         display: flex;
         width: 100%;
@@ -30,6 +57,9 @@ nav,
         margin: 0;
         color: var(--White);
         text-decoration: none;
+        @include tablet{
+          padding: 2rem 0;
+        }
         & a{
             display: inherit;
             text-decoration: none;

@@ -1,14 +1,76 @@
+@use './abstracts' as*;
+
 footer, .footer{
     background-color: var(--BandSite-Black);
+    color: var(--Text-white);
     display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    line-height: 150%;
+
+    & > first-child{
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo__large{
+        display: none;
+
+        @include tablet{
+            display: flex;
+        }
+    }
+    &__row{
+       display: flex;
+       flex-direction: column;
+        row-gap: 1.5rem;
+       @include tablet{
+        flex-direction: row;
+        flex: 1 1 auto;
+        column-gap: 5rem;
+       }
+    }
+    &__section{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    &__heading{
+        font-weight: 600;
+        padding-bottom: 0;
+    }
     &__socials{
         display: inherit;
+        padding: 0;
+        margin: 0;
+        column-gap: 2rem;
         &__links{
             display: flex;
             list-style: none;
+            align-items: center;
            & img{
-            height: 2.5rem;
+            height: 1.5rem;
+            width: auto;
            }
+        }
+    }
+    &__contact{
+        line-height: 150%;
+        font-weight: 600;
+    }
+    &__logo{
+        max-width: 7.5rem;
+        max-height: 1.25rem;
+
+        @include tablet{
+            display: none;
+        }
+    }
+
+    &__legal{
+        font-size: 0.75rem;
+
+        @include tablet{
+            font-size: 1rem;
         }
     }
 }
