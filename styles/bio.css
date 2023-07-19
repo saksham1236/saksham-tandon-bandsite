@@ -1,5 +1,5 @@
 :root {
-  --font-face: AvernirNextLTPro;
+  --font-face: "AvernirNextLTPro";
   --BandSite-Black: #323232;
   --Silver: #afafaf;
   --White: #fff;
@@ -11,18 +11,32 @@
 }
 
 .hero {
-  min-height: 20rem;
+  min-height: 15rem;
   display: flex;
   align-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
 }
+@media (width >= 768px) {
+  .hero {
+    min-height: 30rem;
+  }
+}
 .hero__heading {
   color: var(--White);
 }
 
-.section__heading, .section__image, .section__description {
-  padding-bottom: 16px;
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.section > * {
+  padding-bottom: 1rem;
+}
+@media (width >= 768px) {
+  .section > * {
+    padding-bottom: 2.25rem;
+  }
 }
 .section__quote {
   font-size: 1.125rem;
@@ -33,34 +47,55 @@
 .section__quote__inner {
   margin: 0;
 }
+@media (width >= 768px) {
+  .section__quote {
+    font-size: 1.5rem;
+  }
+  .section__quote figcaption {
+    padding-top: 1rem;
+    font-size: 1.125rem;
+  }
+}
 .section__subheading {
   font-weight: 600;
+}
+.section__description {
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 1rem;
+  padding: 0;
+}
+@media (width >= 768px) {
+  .section__description {
+    flex-direction: row;
+  }
 }
 .section__gallery {
   display: flex;
   width: 100%;
   flex-direction: column;
   row-gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
-@media (1280px > width >= 768px) {
+@media (width >= 768px) {
   .section__gallery {
     flex-direction: row;
     flex-wrap: wrap;
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    justify-content: space-between;
+    flex: 1 1 auto;
   }
   .section__gallery__image {
     width: calc(50% - 1rem);
   }
 }
 @media (width >= 1280px) {
-  .section__gallery {
-    flex-direction: row;
-    flex-wrap: wrap;
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
-  }
   .section__gallery__image {
-    width: calc(33% - 2rem);
+    max-width: calc(33% - 1.5rem);
   }
 }/*# sourceMappingURL=bio.css.map */

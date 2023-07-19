@@ -3,8 +3,11 @@
 section, .container, footer{
   padding: 1.5rem 1rem;
   @include tablet{
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
+    padding: 3rem 2.25rem;
+  }
+
+  @include desktop{
+    padding: 3rem calc((100% - 1020px)/2);
   }
 }
 .row {
@@ -13,6 +16,7 @@ section, .container, footer{
   flex-wrap: wrap;
 }
 
+//Grids are still work in progress, update in next sprint
 @for $i from 0 through 11 {
   .col-#{$i + 1} {
     width: calc((100% / (12 - #{$i})) + 1.5rem * #{$i});

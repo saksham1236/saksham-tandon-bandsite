@@ -1,6 +1,6 @@
 :root {
   //font-face
-  --font-face: AvernirNextLTPro;
+  --font-face: "AvernirNextLTPro";
 
   //theme colors
   --BandSite-Black: #323232;
@@ -22,7 +22,7 @@
 }
 
 @mixin tablet{
-    @media(1280px > width >= 768px){
+    @media(width >= 768px){
         @content
     }
 }

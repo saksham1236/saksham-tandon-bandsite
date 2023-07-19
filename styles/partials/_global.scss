@@ -1,3 +1,5 @@
+@use './abstracts' as*;
+
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -20,23 +22,63 @@ picture {
 
 body {
   font-family: var(--font-face), sans-serif;
+  font-kerning: auto;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3{
+h1{
   margin: 0;
   font-family: var(--font-face), sans-serif;
+  font-size: 1.5rem;
   line-height: 150%;
-  padding-top: 1.5rem;
   padding-bottom: 1rem;
+
+  @include tablet{
+    font-size: 3.75rem;
+    padding-bottom: 2.25rem;
+  }
+}
+
+h2{
+  margin: 0;
+  font-family: var(--font-face), sans-serif;
+  font-size: 1.5rem;
+  line-height: 150%;
+  padding-bottom: 1rem;
+
+  @include tablet{
+    font-size: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+}
+
+h3{
+  margin: 0;
+  font-family: var(--font-face), sans-serif;
+  font-size: 1.5rem;
+  line-height: 150%;
+  padding-bottom: 1rem;
+
+  @include tablet{
+    padding-bottom: 2.25rem;
+  }
 }
 
 p{
   font-family: var(--font-face), sans-serif;
-  line-height: 120%;
+  line-height: 150%;
+  margin: 0;
+
+  @include tablet{
+    line-height: 180%;
+  }
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
 section:nth-of-type(odd){
   background-color: var(--Alabaster);
 }
