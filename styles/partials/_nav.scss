@@ -49,6 +49,19 @@ nav,
       @include desktop{
         column-gap: 3rem;
       }
+      & a{
+        display: flex;
+        width: 100%;
+      }
+      & li{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+        color: var(--White);
+        text-decoration: none;
+        flex: 1 1 auto;
+      }
       &__item {
         display: flex;
         width: 100%;
@@ -57,12 +70,9 @@ nav,
         margin: 0;
         color: var(--White);
         text-decoration: none;
+        flex: 1 1 auto;
         @include tablet{
           padding: 2rem 0;
-        }
-        & a{
-            display: inherit;
-            text-decoration: none;
         }
         &__active{
             border-bottom: 4px solid var(--White);
