@@ -47,6 +47,7 @@ picture {
 body {
   font-family: var(--font-face), sans-serif;
   font-kerning: auto;
+  font-optical-sizing: auto;
   margin: 0;
   padding: 0;
 }
@@ -380,4 +381,93 @@ footer__legal, .footer__legal {
   footer__legal, .footer__legal {
     font-size: 1rem;
   }
+}
+
+form,
+.form {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+form__avatar,
+.form__avatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+form__avatar__img,
+.form__avatar__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+form__container,
+.form__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  row-gap: 2rem;
+}
+form__input,
+.form__input {
+  width: 100%;
+  display: inherit;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+form__input__label,
+.form__input__label {
+  color: var(--Silver);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+form__input__field,
+.form__input__field {
+  line-height: 1.5rem;
+  height: 2.5rem;
+  border: 1.5px solid var(--Mercury);
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  transition: all 0.3s ease;
+}
+form__input__field::-moz-placeholder, .form__input__field::-moz-placeholder {
+  color: var(--text-body);
+}
+form__input__field::placeholder,
+.form__input__field::placeholder {
+  color: var(--text-body);
+}
+form__input__field:focus-visible, form__input__field:hover,
+.form__input__field:focus-visible,
+.form__input__field:hover {
+  outline: none;
+  border: 1.5px solid var(--BandSite-DarkBlack);
+  transition: all 0.3s ease;
+}
+
+input {
+  font-family: var(--font-face), sans-serif;
+}
+
+button, .button {
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--BandSite-Black);
+  border-radius: 4px;
+  border: none;
+  color: var(--Text-white);
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding-top: 4px;
+}
+button:hover, .button:hover {
+  transition: all 0.3s ease;
+  background-color: var(--BandSite-DarkBlack);
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
