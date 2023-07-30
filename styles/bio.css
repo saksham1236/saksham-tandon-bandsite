@@ -8,6 +8,7 @@
   --Alabaster: #fafafa;
   --Text-white: #fff;
   --text-body: #000;
+  --error-text: red;
 }
 
 .hero {
@@ -98,4 +99,51 @@
   .section__gallery__image {
     max-width: calc(33% - 1.5rem);
   }
+}
+
+.comment {
+  padding-top: 1.5rem;
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.comment__avatar {
+  height: 3rem;
+  min-width: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.comment__avatar__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.comment__container {
+  display: inherit;
+  flex-direction: column;
+  row-gap: 1rem;
+  flex: 1 1 auto;
+}
+.comment__header {
+  display: inherit;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+.comment__date {
+  color: var(--Silver);
+}
+.comment__id {
+  flex: 1 1 auto;
+}
+.comment__id__heading {
+  padding: 0;
+  margin: 0;
+  color: var(--BandSite-Black);
+}
+.comment__text {
+  display: inherit;
+  flex: 1 1 auto;
 }/*# sourceMappingURL=bio.css.map */

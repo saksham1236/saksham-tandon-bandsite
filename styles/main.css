@@ -8,6 +8,7 @@
   --Alabaster: #fafafa;
   --Text-white: #fff;
   --text-body: #000;
+  --error-text: red;
 }
 
 @font-face {
@@ -452,6 +453,10 @@ input {
   font-family: var(--font-face), sans-serif;
 }
 
+.error {
+  outline: 2px solid red;
+}
+
 button, .button {
   display: flex;
   height: 2.5rem;
@@ -470,4 +475,12 @@ button:hover, .button:hover {
   transition: all 0.3s ease;
   background-color: var(--BandSite-DarkBlack);
   cursor: pointer;
+}
+
+hr, .divider {
+  border-top: 1.5px solid var(--Mercury);
+}
+
+.errorMsg {
+  color: var(--error-text);
 }/*# sourceMappingURL=main.css.map */

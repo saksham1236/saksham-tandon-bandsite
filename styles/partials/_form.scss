@@ -58,3 +58,7 @@ form,
 input {
   font-family: var(--font-face), sans-serif;
 }
+
+.error {
+  outline: 2px solid red;
+}
