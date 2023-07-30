@@ -7,6 +7,31 @@
     <title>BandSite</title>
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/bio.css" />
+    <template id = "commentTemplate">
+      <hr class = "divider" />
+      <div class="comment">
+        <div class="comment__avatar">
+          <img class ="comment__avatar__img" alt ="user avatar" src="assets/Images/Mohan-muruge.jpg" />
+        </div>
+        <div class="comment__container">
+          <div class="comment__header">
+            <div class="comment__id">
+              <h4 class = "comment__id__heading">Conner Walton</h4>
+            </div>
+            <div class="comment__date">
+              <span>02/17/2021</span>
+            </div>
+          </div>
+
+          <div class="comment__text">
+            <p>
+              I had the same kind of problem, do you know how I managed to
+              fix it? Myself, by doing some online research.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
   </head>
   <body>
     <header>
@@ -150,7 +175,7 @@
                   placeholder="Enter your name" />
               </div>
 
-              <div class="form__input">
+              <div class="form__input" id = "commentInputContainer">
                 <label class="form__input__label" for="commentInput"
                   >COMMENT</label
                 >
@@ -168,30 +193,9 @@
           </form>
         </div>
 
-        <div class="section__comments">
-          <hr class = "divider" />
-          <div class="comment">
-            <div class="comment__avatar">
-              <img class ="comment__avatar__img" alt ="user avatar" src="assets/Images/Mohan-muruge.jpg" />
-            </div>
-            <div class="comment__container">
-              <div class="comment__header">
-                <div class="comment__id">
-                  <h4 class = "comment__id__heading">Conner Walton</h4>
-                </div>
-                <div class="comment__date">
-                  <span>02/17/2021</span>
-                </div>
-              </div>
+        <div class="section__comments" id = "commentSection">
+          
 
-              <div class="comment__text">
-                <p>
-                  I had the same kind of problem, do you know how I managed to
-                  fix it? Myself, by doing some online research.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </main>

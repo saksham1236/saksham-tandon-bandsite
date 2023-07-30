@@ -453,10 +453,6 @@ input {
   font-family: var(--font-face), sans-serif;
 }
 
-.error {
-  outline: 2px solid red;
-}
-
 button, .button {
   display: flex;
   height: 2.5rem;
@@ -481,6 +477,12 @@ hr, .divider {
   border-top: 1.5px solid var(--Mercury);
 }
 
+.error {
+  border: 2px solid red;
+}
+
 .errorMsg {
   color: var(--error-text);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
 }/*# sourceMappingURL=main.css.map */
