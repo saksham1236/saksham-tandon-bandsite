@@ -1,4 +1,4 @@
-﻿@use './abstracts' as*;
+@use './abstracts' as *;
 
 .table{
     display: flex;
@@ -8,6 +8,10 @@
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
+
+        @include tablet{
+            flex-direction: row;
+        }
     }
     
     &__cell{

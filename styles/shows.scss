@@ -96,3 +96,65 @@ hr,
         flex-direction: column;
     }
 }
+
+.table{
+    display: flex;
+    flex-direction: column;
+    
+    &__row {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        flex: 1 1 auto;
+        @include tablet{
+            flex-direction: row;
+            align-items: center;
+            flex: 1 1 0;
+        }
+
+        &:hover{
+            background-color: var(--Alabaster);
+        }
+        &:active{
+            background-color: var(--Mercury);
+        }
+    }
+    &__row__label{
+        display: none;
+        flex-direction: column;
+        row-gap: 1rem;
+        align-items: center;
+        flex: 1 1 0;
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 1rem;
+        }
+    }
+    &__cell{
+        display: flex;
+        flex: 1 1 auto;
+        @include tablet{
+            flex: 1 1 0;
+        }
+    }
+    
+    &__date{
+        font-weight: 600;
+    }
+
+    &__label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--Silver);
+
+        mobile {
+            display: flex;
+            font-size: 0.75rem;
+        }
+    }
+    
+}
+.divider {
+    margin-top: 1rem;
+}

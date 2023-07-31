@@ -111,4 +111,67 @@ hr,
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+.table__row {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  flex: 1 1 auto;
+}
+@media (width >= 768px) {
+  .table__row {
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 0;
+  }
+}
+.table__row:hover {
+  background-color: var(--Alabaster);
+}
+.table__row:active {
+  background-color: var(--Mercury);
+}
+.table__row__label {
+  display: none;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  flex: 1 1 0;
+}
+@media (width >= 768px) {
+  .table__row__label {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+  }
+}
+.table__cell {
+  display: flex;
+  flex: 1 1 auto;
+}
+@media (width >= 768px) {
+  .table__cell {
+    flex: 1 1 0;
+  }
+}
+.table__date {
+  font-weight: 600;
+}
+.table__label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--Silver);
+}
+.table__label mobile {
+  display: flex;
+  font-size: 0.75rem;
+}
+
+.divider {
+  margin-top: 1rem;
 }/*# sourceMappingURL=shows.css.map */
