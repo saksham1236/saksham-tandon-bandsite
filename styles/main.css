@@ -8,6 +8,7 @@
   --Alabaster: #fafafa;
   --Text-white: #fff;
   --text-body: #000;
+  --error-text: red;
 }
 
 @font-face {
@@ -47,6 +48,7 @@ picture {
 body {
   font-family: var(--font-face), sans-serif;
   font-kerning: auto;
+  font-optical-sizing: auto;
   margin: 0;
   padding: 0;
 }
@@ -379,5 +381,184 @@ footer__legal, .footer__legal {
 @media (width >= 768px) {
   footer__legal, .footer__legal {
     font-size: 1rem;
+  }
+}
+
+form,
+.form {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+form__avatar,
+.form__avatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+form__avatar__img,
+.form__avatar__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+form__container,
+.form__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  row-gap: 2rem;
+}
+form__input,
+.form__input {
+  width: 100%;
+  display: inherit;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+form__input__label,
+.form__input__label {
+  color: var(--Silver);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+form__input__field,
+.form__input__field {
+  line-height: 1.5rem;
+  height: 2.5rem;
+  border: 1.5px solid var(--Mercury);
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  transition: all 0.3s ease;
+}
+form__input__field::-moz-placeholder, .form__input__field::-moz-placeholder {
+  color: var(--text-body);
+}
+form__input__field::placeholder,
+.form__input__field::placeholder {
+  color: var(--text-body);
+}
+form__input__field:focus-visible, form__input__field:hover,
+.form__input__field:focus-visible,
+.form__input__field:hover {
+  outline: none;
+  border: 1.5px solid var(--BandSite-DarkBlack);
+  transition: all 0.3s ease;
+}
+
+input {
+  font-family: var(--font-face), sans-serif;
+}
+
+button, .button {
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--BandSite-Black);
+  border-radius: 4px;
+  border: none;
+  color: var(--Text-white);
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding-top: 4px;
+}
+button:hover, .button:hover {
+  transition: all 0.3s ease;
+  background-color: var(--BandSite-DarkBlack);
+  cursor: pointer;
+}
+
+hr, .divider {
+  border-top: 1.5px solid var(--Mercury);
+  width: 100%;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.errorMsg {
+  color: var(--error-text);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.section > * {
+  padding-bottom: 1rem;
+}
+@media (width >= 768px) {
+  .section > * {
+    padding-bottom: 2.25rem;
+  }
+}
+.section__quote {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0;
+}
+.section__quote__inner {
+  margin: 0;
+}
+@media (width >= 768px) {
+  .section__quote {
+    font-size: 1.5rem;
+  }
+  .section__quote figcaption {
+    padding-top: 1rem;
+    font-size: 1.125rem;
+  }
+}
+.section__subheading {
+  font-weight: 600;
+}
+.section__description {
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 1rem;
+  padding: 0;
+}
+@media (width >= 768px) {
+  .section__description {
+    flex-direction: row;
+  }
+}
+.section__gallery {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+@media (width >= 768px) {
+  .section__gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+  .section__gallery__image {
+    width: calc(50% - 1rem);
+  }
+}
+@media (width >= 1280px) {
+  .section__gallery__image {
+    max-width: calc(33% - 1.5rem);
   }
 }/*# sourceMappingURL=main.css.map */

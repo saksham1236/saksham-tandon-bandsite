@@ -1,0 +1,60 @@
+@use './abstracts' as*;
+
+form,
+.form {
+  display: flex;
+  column-gap: 1rem;
+
+  &__avatar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &__img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    row-gap: 2rem;
+  }
+
+  &__input {
+    width: 100%;
+    display: inherit;
+    flex-direction: column;
+    flex: 1 1 auto;
+    &__label {
+      color: var(--Silver);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+    &__field {
+      line-height: 1.5rem;
+      height: 2.5rem;
+      border: 1.5px solid var(--Mercury);
+      border-radius: 0.25rem;
+      padding: 0 1rem;
+      transition: all 0.3s ease;
+      &::placeholder {
+        color: var(--text-body);
+    }
+      &:focus-visible,
+      &:hover {
+        outline: none;
+        border: 1.5px solid var(--BandSite-DarkBlack);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+input {
+  font-family: var(--font-face), sans-serif;
+}

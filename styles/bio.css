@@ -8,22 +8,56 @@
   --Alabaster: #fafafa;
   --Text-white: #fff;
   --text-body: #000;
+  --error-text: red;
 }
 
-.hero {
-  min-height: 15rem;
+.comment {
+  padding: 1.5rem 0;
   display: flex;
-  align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/Images/hero-bio.jpg);
-  background-size: cover;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
-@media (width >= 768px) {
-  .hero {
-    min-height: 30rem;
-  }
+.comment__avatar {
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
 }
-.hero__heading {
-  color: var(--White);
+.comment__avatar__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.comment__container {
+  display: inherit;
+  flex-direction: column;
+  row-gap: 1rem;
+  flex: 1 1 auto;
+}
+.comment__header {
+  display: inherit;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+.comment__date {
+  color: var(--Silver);
+}
+.comment__id {
+  flex: 1 1 auto;
+}
+.comment__id__heading {
+  padding: 0;
+  margin: 0;
+  color: var(--BandSite-Black);
+}
+.comment__text {
+  line-height: 150%;
+  display: inherit;
+  flex: 1 1 auto;
 }
 
 .section {
@@ -98,4 +132,23 @@
   .section__gallery__image {
     max-width: calc(33% - 1.5rem);
   }
+}
+
+.hero {
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/Images/hero-bio.jpg);
+  background-size: cover;
+}
+@media (width >= 768px) {
+  .hero {
+    display: row;
+    min-height: 30rem;
+  }
+}
+.hero__heading {
+  color: var(--White);
 }/*# sourceMappingURL=bio.css.map */

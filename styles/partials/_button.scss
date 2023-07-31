@@ -1,0 +1,20 @@
+button, .button {
+    display: flex;
+    height:3rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--BandSite-Black);
+    border-radius: 4px;
+    border: none;
+    color: var(--Text-white);
+    font-family: inherit;
+    font-size: 1.125rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding-top: 4px;
+    &:hover{
+        transition: all 0.3s ease;
+        background-color: var(--BandSite-DarkBlack);
+        cursor: pointer;
+    }
+}

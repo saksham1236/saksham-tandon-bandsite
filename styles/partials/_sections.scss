@@ -1,0 +1,71 @@
+@use './abstracts' as*;
+
+.section{
+    display: flex;
+    flex-direction: column;
+    & > * {
+        padding-bottom: 1rem;
+
+        @include tablet{
+            padding-bottom: 2.25rem;
+        }
+    }
+
+    &__quote{
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 150%;
+        margin: 0;
+        &__inner{
+            margin: 0;
+        }
+
+        @include tablet{
+            font-size: 1.5rem;
+            & figcaption{
+                padding-top: 1rem;
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    &__subheading{
+        font-weight: 600;
+    }
+    &__description{
+        display: flex;
+        flex-direction: column;
+        column-gap: 1rem;
+        row-gap: 1rem;
+        padding: 0;
+        @include tablet{
+            flex-direction: row;
+        }
+    }
+    &__gallery{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        row-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        @include tablet{
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 1.5rem;
+            row-gap: 1.5rem;
+            justify-content: space-between;
+            flex: 1 1 auto;
+            &__image{
+                width: calc(50% - 1rem);
+            }
+        }
+
+        @include desktop{
+            &__image{
+                max-width: calc(33% - 1.5rem);
+            }
+        }
+    }
+
+}

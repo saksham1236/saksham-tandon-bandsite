@@ -7,19 +7,50 @@
     <title>BandSite</title>
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/bio.css" />
+    <template id = "commentTemplate">
+      <hr class = "divider" />
+      <div class="comment">
+        <div class="comment__avatar">
+          <img class ="comment__avatar__img" alt ="user avatar" src="assets/Images/Mohan-muruge.jpg" />
+        </div>
+        <div class="comment__container">
+          <div class="comment__header">
+            <div class="comment__id">
+              <h4 class = "comment__id__heading">Conner Walton</h4>
+            </div>
+            <div class="comment__date">
+              <span>02/17/2021</span>
+            </div>
+          </div>
+
+          <div class="comment__text">
+            <p>
+              I had the same kind of problem, do you know how I managed to
+              fix it? Myself, by doing some online research.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
   </head>
   <body>
     <header>
       <nav class="nav">
         <div class="nav__logo">
-          <img alt="BandSite logo" src="./assets/Logo/Logo-bandsite.svg" />
+          <a href="index.html"
+            ><img alt="BandSite logo" src="./assets/Logo/Logo-bandsite.svg"
+          /></a>
         </div>
         <div class="nav__links">
           <ul class="nav__links__list">
             <li>
-              <a class="nav__links__list__item nav__links__list__item__active" href = "index.html">Biography</a>
+              <a
+                class="nav__links__list__item nav__links__list__item__active"
+                href="index.html"
+                >Biography</a
+              >
             </li>
-            <li><a class="nav__links__list__item" href = "/">Shows</a></li>
+            <li><a class="nav__links__list__item" href="./pages/shows.html">Shows</a></li>
           </ul>
         </div>
       </nav>
@@ -34,20 +65,19 @@
         <div class="section__image">
           <img
             alt="Bees Knees peforming at Coachella"
-            src="assets/Images/band.jpg"
-          />
+            src="assets/Images/band.jpg" />
         </div>
-        <div class = "section__container">
-        <figure class="section__quote">
-          <q class="section__quote__inner">
-            We push each other to be the best. It’s not uncommon for one of us
-            to say ‘this needs to be better, back to the drawing board’
-          </q>
-          <figcaption>
-            - Bryan Teddy, lead vocalist of The Bees Knees
-          </figcaption>
-        </figure>
-      </div>
+        <div class="section__container">
+          <figure class="section__quote">
+            <q class="section__quote__inner">
+              We push each other to be the best. It’s not uncommon for one of us
+              to say ‘this needs to be better, back to the drawing board’
+            </q>
+            <figcaption>
+              - Bryan Teddy, lead vocalist of The Bees Knees
+            </figcaption>
+          </figure>
+        </div>
         <h3 class="section__subheading">Bees Knees</h3>
         <div class="section__description">
           <p>
@@ -78,104 +108,183 @@
         <h2 class="section__heading">Photo section</h2>
         <div class="section__gallery">
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-1.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-1.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-2.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-2.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-3.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-3.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-4.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-4.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-5.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-5.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-6.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-6.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-7.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-7.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-8.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-8.jpg" />
           </div>
           <div class="section__gallery__image">
-            <img src="./assets/Images/Photo-gallery-9.jpg" />
+            <img
+              alt="gallery images"
+              src="./assets/Images/Photo-gallery-9.jpg" />
           </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__heading">Join the Conversation</h2>
+        <div class="section__form">
+          <form class="form" id = "commentForm">
+            <div class="form__avatar">
+              <img
+                alt="Your Profile Picture"
+                class="form__avatar__img"
+                src="./assets/Images/Mohan-muruge.jpg" />
+            </div>
+            <div class="form__container">
+              <div class="form__input" id = "nameInputContainer">
+                <label class="form__input__label" for="nameInput">NAME</label>
+                <input
+                  class="form__input__field"
+                  type="text"
+                  id="nameInput"
+                  placeholder="Enter your name" />
+              </div>
+
+              <div class="form__input" id = "commentInputContainer">
+                <label class="form__input__label" for="commentInput"
+                  >COMMENT</label
+                >
+                <input
+                  class="form__input__field"
+                  type="text"
+                  id="commentInput"
+                  placeholder="Add a new comment" />
+              </div>
+
+              <div class="form__input">
+                <input class="button" type="submit" value="COMMENT" />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="section__comments" id = "commentSection">
+          
+
         </div>
       </section>
     </main>
     <footer class="footer">
-    <div class = "footer__row">
-      <div class = "footer__row">
-        <h2 class="footer__heading">Get in Touch</h2>
-        <ul class="footer__socials">
-          <li class="footer__socials__links">
-            <a href = "https://www.instagram.com"><img src="./assets/Icons/SVG/Icon-instagram.svg" /></a>
-          </li>
-          <li class="footer__socials__links">
-            <a href = "https://www.twitter.com"><img src="./assets/Icons/SVG/Icon-twitter.svg" /></a>
-          </li>
-          <li class="footer__socials__links">
-            <a href = "https://www.facebook.com"><img src="./assets/Icons/SVG/Icon-facebook.svg" /></a>
-          </li>
-        </ul>
-      </div>
-      <div class = "footer__logo__large"><img alt="BandSite logo" src="./assets/Logo/Logo-bandsite.svg" /></div>
-      </div>
-    <div class = "footer__row">
-      <div class="footer__section">
-        <div class="footer__contact">
-          <span>Cam Adam<br />The Bees Knees Management</span>
+      <div class="footer__row">
+        <div class="footer__row">
+          <h2 class="footer__heading">Get in Touch</h2>
+          <ul class="footer__socials">
+            <li class="footer__socials__links">
+              <a href="https://www.instagram.com"
+                ><img
+                  alt="instagram icon"
+                  src="./assets/Icons/SVG/Icon-instagram.svg"
+              /></a>
+            </li>
+            <li class="footer__socials__links">
+              <a href="https://www.twitter.com"
+                ><img
+                  alt="Twitter icon"
+                  src="./assets/Icons/SVG/Icon-twitter.svg"
+              /></a>
+            </li>
+            <li class="footer__socials__links">
+              <a href="https://www.facebook.com"
+                ><img
+                  alt="Facebook icon"
+                  src="./assets/Icons/SVG/Icon-facebook.svg"
+              /></a>
+            </li>
+          </ul>
         </div>
-        <div class="footer__address">
-          <span>503 Broadway Penthouse,<br> New York, NY 10012, USA</span>
-        </div>
-        <div class="footer__email">
-          <span
-            ><a href="mailto:info@thebeesknees.com"
-              >info@thebeesknees.com</a
-            ></span
-          >
+        <div class="footer__logo__large">
+          <img alt="BandSite logo" src="./assets/Logo/Logo-bandsite.svg" />
         </div>
       </div>
-
-      <div class="footer__section">
-        <div class="footer__contact">
-          <span>Pearl Gregg<br />Limitless Artist Group</span>
-        </div>
-        <div class="footer__details">
-          <span>Booking Agent for<br />USA / South America / Japan</span>
-        </div>
-
-        <div class="footer__email">
-          <span
-            ><a href="mailto:pearl.gregg@limitlessag.com"
-              >pearl.gregg@limitlessag.com</a
-            ></span
-          >
-        </div>
-      </div>
-
-      <div class="footer__section">
-        <div class="footer__contact">
-          <span>Carson Whyte<br />ARCH Entertainment</span>
-        </div>
-        <div class="footer__details">
-          <span>Booking Agent for<br />UK / EU / AU</span>
+      <div class="footer__row">
+        <div class="footer__section">
+          <div class="footer__contact">
+            <span>Cam Adam<br />The Bees Knees Management</span>
+          </div>
+          <div class="footer__address">
+            <span
+              >503 Broadway Penthouse,<br />
+              New York, NY 10012, USA</span
+            >
+          </div>
+          <div class="footer__email">
+            <span
+              ><a href="mailto:info@thebeesknees.com"
+                >info@thebeesknees.com</a
+              ></span
+            >
+          </div>
         </div>
 
-        <div class="footer__email">
-          <span
-            ><a href="mailto:cwhyte@archentertainment.com"
-              >cwhyte@archentertainment.com</a
-            ></span
-          >
+        <div class="footer__section">
+          <div class="footer__contact">
+            <span>Pearl Gregg<br />Limitless Artist Group</span>
+          </div>
+          <div class="footer__details">
+            <span>Booking Agent for<br />USA / South America / Japan</span>
+          </div>
+
+          <div class="footer__email">
+            <span
+              ><a href="mailto:pearl.gregg@limitlessag.com"
+                >pearl.gregg@limitlessag.com</a
+              ></span
+            >
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <div class="footer__contact">
+            <span>Carson Whyte<br />ARCH Entertainment</span>
+          </div>
+          <div class="footer__details">
+            <span>Booking Agent for<br />UK / EU / AU</span>
+          </div>
+
+          <div class="footer__email">
+            <span
+              ><a href="mailto:cwhyte@archentertainment.com"
+                >cwhyte@archentertainment.com</a
+              ></span
+            >
+          </div>
         </div>
       </div>
-    </div>
 
       <div class="footer__logo">
         <img alt="BandSite logo" src="./assets/Logo/Logo-bandsite.svg" />
@@ -185,5 +294,6 @@
         <span>Copyright The Bees Knees © 2021 All Rights Reserved</span>
       </div>
     </footer>
+    <script src ="scripts/index-page.js" async defer></script>
   </body>
 </html>
