@@ -1,11 +1,17 @@
 @use './partials/abstracts' as*;
+@use './partials/comments';
+@use './partials/sections';
+
 .hero{
-    min-height: 15rem;
+    min-height: 20rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/Images/hero-bio.jpg);
     background-size: cover;
     @include tablet{
+        display: row;
         min-height: 30rem;
     }
 
@@ -14,123 +20,4 @@
     }
 }
 
-.section{
-    display: flex;
-    flex-direction: column;
-    & > * {
-        padding-bottom: 1rem;
 
-        @include tablet{
-            padding-bottom: 2.25rem;
-        }
-    }
-
-    &__quote{
-        font-size: 1.125rem;
-        font-weight: 600;
-        line-height: 150%;
-        margin: 0;
-        &__inner{
-            margin: 0;
-        }
-
-        @include tablet{
-            font-size: 1.5rem;
-            & figcaption{
-                padding-top: 1rem;
-                font-size: 1.125rem;
-            }
-        }
-    }
-
-    &__subheading{
-        font-weight: 600;
-    }
-    &__description{
-        display: flex;
-        flex-direction: column;
-        column-gap: 1rem;
-        row-gap: 1rem;
-        padding: 0;
-        @include tablet{
-            flex-direction: row;
-        }
-    }
-    &__gallery{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        row-gap: 1rem;
-        justify-content: center;
-        align-items: center;
-        @include tablet{
-            flex-direction: row;
-            flex-wrap: wrap;
-            column-gap: 1.5rem;
-            row-gap: 1.5rem;
-            justify-content: space-between;
-            flex: 1 1 auto;
-            &__image{
-                width: calc(50% - 1rem);
-            }
-        }
-
-        @include desktop{
-            &__image{
-                max-width: calc(33% - 1.5rem);
-            }
-        }
-    }
-
-}
-
-.comment {
-    padding: 1.5rem 0;
-    display: flex;
-    column-gap: 1rem;
-
-    &__avatar {
-      height: 3rem;
-      width: 3rem;
-      min-width: 3rem;
-      border-radius: 50%;
-      overflow: hidden;
-  
-      &__img {
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
-
-    &__container{
-        display: inherit;
-        flex-direction: column;
-        row-gap: 1rem;
-        flex: 1 1 auto;
-    }
-    &__header{
-        display: inherit;
-        flex-direction: row;
-        justify-content: space-between;
-        flex: 1 1 auto;
-    }
-
-    &__date{
-        color: var(--Silver);
-    }
-
-    &__id{
-        flex: 1 1 auto;
-        &__heading{
-                padding: 0;
-                margin: 0;
-                color: var(--BandSite-Black);
-        }
-    }
-
-    &__text {
-        display: inherit;
-        flex: 1 1 auto;
-    }
-}

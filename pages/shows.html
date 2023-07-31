@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BandSite</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/shows.css" />
+    <template id="tableTemplate">
+      <div class="table__row">
+        <div class="table__cell">
+          <span class="table__label__mobile">DATE</span>
+          <span class="table__date">Mon Sept 06 2023</span>
+        </div>
+
+        <div class="table__cell">
+          <span class="table__label__mobile">VENUE</span>
+          <span class="table__venue">Ronald Lane</span>
+        </div>
+
+        <div class="table__cell">
+          <span class="table__label__mobile">LOCATION</span>
+          <span class="table__location">San Francisco, CA</span>
+        </div>
+
+        <div class="table__cell">
+          <span class="table__button"
+            ><button class="button">BUY TICKETS</button></span
+          >
+        </div>
+      </div>
+      <hr class="divider" />
+    </template>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="nav__logo">
+          <a href="../index.html"
+            ><img alt="BandSite logo" src="../assets/Logo/Logo-bandsite.svg"
+          /></a>
+        </div>
+        <div class="nav__links">
+          <ul class="nav__links__list">
+            <li>
+              <a
+                class="nav__links__list__item"
+                href="../index.html"
+                >Biography</a
+              >
+            </li>
+            <li><a class="nav__links__list__item nav__links__list__item__active" href="shows.html">Shows</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class = "heading__container">
+          <h4 class="hero__sub__heading">Beautiful Beasts Album</h4>
+          <h1 class="hero__heading">Queen of Yellow x For The Stings</h1>
+        </div>
+        <div class = "iframe__container">
+          <iframe class = "iframe"
+          width="100%"
+          height="200"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1156835533&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        <div
+          style="
+            font-size: 10px;
+            color: #cccccc;
+            line-break: anywhere;
+            word-break: normal;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+            font-weight: 100;
+          ">
+          <a
+            href="https://soundcloud.com/onerepublic"
+            title="OneRepublic"
+            target="_blank"
+            style="color: #cccccc; text-decoration: none"
+            >OneRepublic</a
+          >
+          ·
+          <a
+            href="https://soundcloud.com/onerepublic/sunshine"
+            title="Sunshine"
+            target="_blank"
+            style="color: #cccccc; text-decoration: none"
+            >Sunshine</a
+          >
+        </div>
+      </div>
+      </section>
+
+      <section class="section section__shows">
+        <h2 class="section__heading">Shows</h2>
+        <div class="section__table table">
+          <div class="table__row__label">
+            <div class="table__cell">
+              <span class="table__label">DATE</span>
+            </div>
+
+            <div class="table__cell">
+              <span class="table__label">VENUE</span>
+            </div>
+
+            <div class="table__cell">
+              <span class="table__label">LOCATION</span>
+            </div>
+            <div class="table__cell">
+              <span></span>
+            </div>
+          </div>
+          <div class="table__main" id="tableMain">
+            <!-- Populate Shows Here -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__row">
+        <div class="footer__row">
+          <h2 class="footer__heading">Get in Touch</h2>
+          <ul class="footer__socials">
+            <li class="footer__socials__links">
+              <a href="https://www.instagram.com"
+                ><img
+                  alt="instagram icon"
+                  src="../assets/Icons/SVG/Icon-instagram.svg"
+              /></a>
+            </li>
+            <li class="footer__socials__links">
+              <a href="https://www.twitter.com"
+                ><img
+                  alt="Twitter icon"
+                  src="../assets/Icons/SVG/Icon-twitter.svg"
+              /></a>
+            </li>
+            <li class="footer__socials__links">
+              <a href="https://www.facebook.com"
+                ><img
+                  alt="Facebook icon"
+                  src="../assets/Icons/SVG/Icon-facebook.svg"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__logo__large">
+          <img alt="BandSite logo" src="../assets/Logo/Logo-bandsite.svg" />
+        </div>
+      </div>
+      <div class="footer__row">
+        <div class="footer__section">
+          <div class="footer__contact">
+            <span>Cam Adam<br />The Bees Knees Management</span>
+          </div>
+          <div class="footer__address">
+            <span
+              >503 Broadway Penthouse,<br />
+              New York, NY 10012, USA</span
+            >
+          </div>
+          <div class="footer__email">
+            <span
+              ><a href="mailto:info@thebeesknees.com"
+                >info@thebeesknees.com</a
+              ></span
+            >
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <div class="footer__contact">
+            <span>Pearl Gregg<br />Limitless Artist Group</span>
+          </div>
+          <div class="footer__details">
+            <span>Booking Agent for<br />USA / South America / Japan</span>
+          </div>
+
+          <div class="footer__email">
+            <span
+              ><a href="mailto:pearl.gregg@limitlessag.com"
+                >pearl.gregg@limitlessag.com</a
+              ></span
+            >
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <div class="footer__contact">
+            <span>Carson Whyte<br />ARCH Entertainment</span>
+          </div>
+          <div class="footer__details">
+            <span>Booking Agent for<br />UK / EU / AU</span>
+          </div>
+
+          <div class="footer__email">
+            <span
+              ><a href="mailto:cwhyte@archentertainment.com"
+                >cwhyte@archentertainment.com</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__logo">
+        <img alt="BandSite logo" src="../assets/Logo/Logo-bandsite.svg" />
+      </div>
+
+      <div class="footer__legal">
+        <span>Copyright The Bees Knees © 2021 All Rights Reserved</span>
+      </div>
+    </footer>
+    <script src="../scripts/build-shows-page.js" async defer></script>
+  </body>
+</html>

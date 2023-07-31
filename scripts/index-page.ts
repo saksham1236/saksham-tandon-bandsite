@@ -11,6 +11,12 @@ const comments = [
         commentDate: "1/03/23",
         commentText: "How to make the world a better place? It is easy, everyone should do his/her job and don't disturb other people from them doing the same thing."
     }
+    {
+        userId: "Rose Zapata",
+        commentToken: "2342423q52345",
+        commentDate: "1/02/23",
+        commentText: "This was a meandering pile of nothing much. Can I have those minutes back please? Yes, so many words. Words, words, words. We humans have used words since ... Forever. Some say language distinguishes humans from apes and artichokes. I apologize for hurting your brain."
+    }
 ]
 const commentForm = document.getElementById('commentForm');
 
@@ -27,7 +33,7 @@ function removeErrorMsg():void {
 }
 
 function formReset() {
-    document.getElementById('commentForm').reset;
+    document.getElementById("commentForm").reset();
 }
 
 function commentResponseHandler (event) {
@@ -95,13 +101,13 @@ function loadComments(){
         newComment.innerHTML = clone.innerHTML;
 
         const commentUserName = newComment.getElementsByClassName('comment__id__heading');
-        commentUserName[0].innerHTML = comments[i].userId;
+        commentUserName[0].innerText = comments[i].userId;
 
         const commentDate = newComment.getElementsByClassName('comment__date');
-        commentDate[0].innerHTML = comments[i].commentDate;
+        commentDate[0].innerText = comments[i].commentDate;
 
         const commentText = newComment.getElementsByClassName('comment__text');
-        commentText[0].innerHTML = comments[i].commentText;
+        commentText[0].innerText = comments[i].commentText;
 
         commentSection.appendChild(newComment);
         

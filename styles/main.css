@@ -455,13 +455,14 @@ input {
 
 button, .button {
   display: flex;
-  height: 2.5rem;
+  height: 3rem;
   justify-content: center;
   align-items: center;
   background-color: var(--BandSite-Black);
   border-radius: 4px;
   border: none;
   color: var(--Text-white);
+  font-family: inherit;
   font-size: 1.125rem;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -475,6 +476,7 @@ button:hover, .button:hover {
 
 hr, .divider {
   border-top: 1.5px solid var(--Mercury);
+  width: 100%;
 }
 
 .error {
@@ -485,4 +487,78 @@ hr, .divider {
   color: var(--error-text);
   font-size: 0.85rem;
   transition: all 0.3s ease;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.section > * {
+  padding-bottom: 1rem;
+}
+@media (width >= 768px) {
+  .section > * {
+    padding-bottom: 2.25rem;
+  }
+}
+.section__quote {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0;
+}
+.section__quote__inner {
+  margin: 0;
+}
+@media (width >= 768px) {
+  .section__quote {
+    font-size: 1.5rem;
+  }
+  .section__quote figcaption {
+    padding-top: 1rem;
+    font-size: 1.125rem;
+  }
+}
+.section__subheading {
+  font-weight: 600;
+}
+.section__description {
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 1rem;
+  padding: 0;
+}
+@media (width >= 768px) {
+  .section__description {
+    flex-direction: row;
+  }
+}
+.section__gallery {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+@media (width >= 768px) {
+  .section__gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+  .section__gallery__image {
+    width: calc(50% - 1rem);
+  }
+}
+@media (width >= 1280px) {
+  .section__gallery__image {
+    max-width: calc(33% - 1.5rem);
+  }
 }/*# sourceMappingURL=main.css.map */

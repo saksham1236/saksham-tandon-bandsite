@@ -1,0 +1,36 @@
+﻿@use './abstracts' as*;
+
+.table{
+    display: flex;
+    flex-direction: column;
+    
+    &__row{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    
+    &__cell{
+        display: flex;
+        flex: 1 1 auto;
+    }
+    
+    &__date{
+        font-weight: 600;
+    }
+
+    &__label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--Silver);
+
+        mobile {
+            display: flex;
+        }
+    }
+    
+}
+
+.divider {
+    padding-top: 1rem;
+}
