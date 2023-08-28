@@ -1,25 +1,42 @@
-const comments = [
-    {
-        userId: "Jack Marston",
-        commentToken: "12332454325423",
-        commentDate: "26/07/23",
-        commentText: "I want to know what Great Attractor is, curiosity is just killing me."
-    },
-    {
-        userId: "Rose Zapata",
-        commentToken: "2342423q52345",
-        commentDate: "1/03/23",
-        commentText: "How to make the world a better place? It is easy, everyone should do his/her job and don't disturb other people from them doing the same thing."
-    }
-    {
-        userId: "Rose Zapata",
-        commentToken: "2342423q52345",
-        commentDate: "1/02/23",
-        commentText: "This was a meandering pile of nothing much. Can I have those minutes back please? Yes, so many words. Words, words, words. We humans have used words since ... Forever. Some say language distinguishes humans from apes and artichokes. I apologize for hurting your brain."
-    }
-]
+let comments:Array<object> = [];
+const commentSection = document.getElementById('commentSection');
 const commentForm = document.getElementById('commentForm');
+const apiKey = 'b3e54ac2-9fdd-4d52-9d94-9ee20d522a69';
+const apiUrl = 'https://project-1-api.herokuapp.com/';
+const apiRoute = 'comments'
+const config = {
+    headers:{
+        "Content-Type": "application/json"
+    }
+}
 
+function getComments{
+    axios.get(`${apiUrl}${apiRoute}/?api_key=${apiKey}`)
+.then((response:object) =>{
+    console.log(response.data);
+    comments = [...response.data];
+    comments.sort((a, b) => b.timestamp - a.timestamp);
+    loadComments();
+})
+.catch((error:object) => {
+    console.log(error);
+});}
+
+getComments();
+
+function postComment(name:string, text:string){
+    const commentPost = {
+        "name": name,
+        "comment": text
+    }
+    axios.post(`${apiUrl}${apiRoute}/?api_key=${apiKey}`, commentPost, config)
+    .then((response) => {
+    console.log(response);
+    getComments();
+}).catch((error:object) => {
+    console.log(error);
+})
+}
 
 commentForm.addEventListener('submit', commentResponseHandler);
 
@@ -74,14 +91,15 @@ function commentResponseHandler (event) {
         return
     } else {
         hasError = false;
-        const newComment = {
-        userId: `${userName}`,
-        commentToken: (Math.random()*100000000),
-        commentDate: `${today}`,
-        commentText: `${commentText}`
-        }
-        comments.push(newComment);
-        loadComments();
+        postComment(`${userName}`, `${commentText}`);
+
+        //No longer need to create comments locally
+        // const newComment = {
+        // userId: `${userName}`,
+        // commentToken: (Math.random()*100000000),
+        // commentDate: `${today}`,
+        // commentText: `${commentText}`
+        // }
         removeErrorMsg();
         formReset();
     }
@@ -89,7 +107,6 @@ function commentResponseHandler (event) {
 }
 
 function loadComments(){
-    const commentSection = document.getElementById('commentSection');
     while (commentSection.firstChild){
         commentSection.removeChild(commentSection.firstChild);
     }
@@ -100,20 +117,84 @@ function loadComments(){
         const newComment = document.createElement('div');
         newComment.innerHTML = clone.innerHTML;
 
+        
+        newComment.classList.add('comment__container')
+
         const commentUserName = newComment.getElementsByClassName('comment__id__heading');
-        commentUserName[0].innerText = comments[i].userId;
+        commentUserName[0].innerText = comments[i].name;
 
         const commentDate = newComment.getElementsByClassName('comment__date');
-        commentDate[0].innerText = comments[i].commentDate;
+        const formatedDate = new Intl.DateTimeFormat("en-US").format(comments[i].timestamp);
+        commentDate[0].innerText = formatedDate;
 
         const commentText = newComment.getElementsByClassName('comment__text');
-        commentText[0].innerText = comments[i].commentText;
+        commentText[0].innerText = comments[i].comment;
+
+        const commentLikes = newComment.getElementsByClassName('comment__id__likes__inner');
+        commentLikes[0].innerText = `${comments[i].likes} Likes •`;
+
+        const commentDeleteBtn = newComment.getElementsByClassName('delete');
+        commentDeleteBtn[0].setAttribute("data", `${comments[i].id}`);
+        commentDeleteBtn[1].setAttribute("data", `${comments[i].id}`);
+
+        const commentLikeBtn = newComment.getElementsByClassName('like');
+        commentLikeBtn[0].setAttribute("data", `${comments[i].id}`);
+        commentLikeBtn[1].setAttribute("data", `${comments[i].id}`);
 
         commentSection.appendChild(newComment);
-        
+    }
+    
+    addEventdel();
+    addEventLike();
+    
+}
+const delBtnEl = document.getElementsByClassName('delete');
+console.log(delBtnEl);
+function addEventdel(){
+    for(let i = 0; i < delBtnEl.length; ++i){
+        delBtnEl[i].addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log(e);
+            const del = e.target;
+            const commentId = del.getAttribute('data');
+            console.log(commentId);
+            deleteComment(commentId);
+        });
     }
 }
 
-window.addEventListener('load', (event) => {
-    loadComments();
-});
+function deleteComment(commentId) {
+    axios
+    .delete(`${apiUrl}${apiRoute}/${commentId}/?api_key=${apiKey}`)
+    .then((response) => {
+        console.log(response);
+        getComments();
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
+const likeBtnEl = document.getElementsByClassName('like');
+function addEventLike(){
+    for(let i = 0; i < likeBtnEl.length; ++i){
+        likeBtnEl[i].addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log(e);
+            const like = e.target;
+            const commentId = like.getAttribute('data');
+            console.log(commentId);
+            likeComment(commentId);
+        });
+    }
+}
+
+function likeComment(commentId) {
+    axios
+    .put(`${apiUrl}${apiRoute}/${commentId}/like/?api_key=${apiKey}`)
+    .then((response) => {
+        getComments();
+        console.log(response);
+    }).catch((error) => {
+        console.log(error);
+    });
+}

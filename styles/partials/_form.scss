@@ -35,16 +35,29 @@ form,
       font-weight: 600;
       font-size: 0.75rem;
     }
+
+    &__textArea {
+      resize:vertical;
+      overflow: auto;
+    }
+    &__submit{
+      @include tablet{
+        align-self: flex-end;
+        width: 12rem;
+      }
+    }
     &__field {
+      font-family: var(--font-face);
       line-height: 1.5rem;
-      height: 2.5rem;
       border: 1.5px solid var(--Mercury);
       border-radius: 0.25rem;
-      padding: 0 1rem;
+      padding: 0.5rem 1rem;
       transition: all 0.3s ease;
+
       &::placeholder {
+        font-family: var(--font-face);
         color: var(--text-body);
-    }
+      }
       &:focus-visible,
       &:hover {
         outline: none;

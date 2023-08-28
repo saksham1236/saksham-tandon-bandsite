@@ -15,11 +15,21 @@ section, .container, footer{
   display: flex;
   flex-wrap: wrap;
 }
-
-//Grids are still work in progress, update in next sprint
-@for $i from 0 through 11 {
-  .col-#{$i + 1} {
-    width: calc((100% / (12 - #{$i})) + 1.5rem * #{$i});
-    margin-left: 1rem;
+.med {
+  @include tablet{
+    padding: 3rem calc((100% - 846px)/2);
   }
 }
+
+.small{
+  @include tablet{
+    padding: 3rem calc((100% - 672px)/2);
+  }
+}
+//Grids are still work in progress, update in next sprint - (Wasn't able to complete for this sprint)
+// @for $i from 0 through 11 {
+//   .col-#{$i + 1} {
+//     width: calc((100% / (12 - #{$i})) + 1.5rem * #{$i});
+//     margin-left: 1rem;
+//   }
+// }

@@ -10,7 +10,17 @@
             padding-bottom: 2.25rem;
         }
     }
+.med, .small{
+    display: flex;
+    flex-direction: column;
+    & > * {
+        padding-bottom: 1rem;
 
+        @include tablet{
+            padding-bottom: 2.25rem;
+        }
+    }
+}
     &__quote{
         font-size: 1.125rem;
         font-weight: 600;

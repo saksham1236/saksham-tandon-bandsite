@@ -1,6 +1,7 @@
 button, .button {
     display: flex;
     height:3rem;
+    min-width: 3rem;
     justify-content: center;
     align-items: center;
     background-color: var(--BandSite-Black);

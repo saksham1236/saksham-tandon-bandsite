@@ -1,52 +1,76 @@
-@use './abstracts' as*;
+@use "./abstracts" as *;
 .comment {
-    padding: 1.5rem 0;
-    display: flex;
-    column-gap: 1rem;
+  padding: 1.5rem 0;
+  display: flex;
+  column-gap: 1rem;
 
-    &__avatar {
-      height: 3rem;
-      width: 3rem;
-      min-width: 3rem;
-      border-radius: 50%;
-      overflow: hidden;
+  &__avatar {
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--Mercury);
+
+    &__img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__container {
+    display: inherit;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex: 1 1 auto;
+  }
+  &__header {
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+
+  &__date {
+    color: var(--Silver);
+  }
+
+  &__id {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    &__heading {
+      padding: 0;
+      margin: 0;
+      color: var(--BandSite-Black);
+    }
+
+    &__likes {
+      color: var(--Silver);
+      margin-right: 0.25rem;
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+    display: inherit;
+    flex: 1 1 auto;
+  }
   
-      &__img {
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+  &__actions {
+    display: inherit;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 0.5rem;
+    &__button{
+      background-color: var(--Mercury);
+
+      &:hover{
+        background-color: var(--Silver);
       }
     }
-
-    &__container{
-        display: inherit;
-        flex-direction: column;
-        row-gap: 1rem;
-        flex: 1 1 auto;
+    &__icon {
+      height: 1.5rem;
     }
-    &__header{
-        display: inherit;
-        flex-direction: row;
-        justify-content: space-between;
-        flex: 1 1 auto;
-    }
-
-    &__date{
-        color: var(--Silver);
-    }
-
-    &__id{
-        flex: 1 1 auto;
-        &__heading{
-                padding: 0;
-                margin: 0;
-                color: var(--BandSite-Black);
-        }
-    }
-
-    &__text {
-        line-height: 150%;
-        display: inherit;
-        flex: 1 1 auto;
-    }
+  }
 }

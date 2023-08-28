@@ -116,12 +116,19 @@ hr,
 .table {
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
+}
+@media (width >= 1280px) {
+  .table {
+    padding-top: 1rem;
+  }
 }
 .table__row {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   flex: 1 1 auto;
+  padding: 1rem 0;
 }
 @media (width >= 768px) {
   .table__row {
@@ -172,6 +179,16 @@ hr,
   font-size: 0.75rem;
 }
 
+@media (width >= 1280px) {
+  .section__shows {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+    flex-direction: row;
+    flex: 1 1 auto;
+  }
+}
+
 .divider {
-  margin-top: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }/*# sourceMappingURL=shows.css.map */
