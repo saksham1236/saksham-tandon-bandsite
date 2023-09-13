@@ -24,6 +24,7 @@ function getShows() {
         console.log(response.data);
         showDates = [...response.data];
         showDates.sort((a, b) => a.timestamp - b.timestamp);
+        loadShowTable();
     })
         .catch((error) => {
         console.log(error);
@@ -47,6 +48,3 @@ function loadShowTable() {
         tableSection.appendChild(newtable);
     }
 }
-window.addEventListener('load', (event) => {
-    loadShowTable();
-});
